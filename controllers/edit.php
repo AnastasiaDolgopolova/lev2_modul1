@@ -25,9 +25,21 @@ $post = $db->getOne('post', $id);
               <label for="">Title</label>
               <input type="text" name="title" class="form-control" value="<?php echo $post['title'];?>">
           </div>
-
+          <label for="">Description</label>
+          <div class="form-group">
+            <textarea name="description" class="form-control"rows="2" cols="60" maxlength="250" value="<?php echo $post['description'];?>"></textarea>
+         </div> 
+        <label for="">Text</label>
+          <div class="form-group">
+            <textarea name="text" class="form-control" rows="13" cols="60"  maxlength="5000" value="<?php echo $post['text'];?>"></textarea>
+        </div>
+         <div class="custom-file my-3">
+            <input type="file" class="custom-file-input" id="customFile" name="file">
+            <label class="custom-file-label" for="customFile">Choose picture</label>
+        </div>
           <div class="form-group">
               <button class="btn btn-warning">Edit Post</button>
+              <a href="/" class="btn btn-info">Back</a>
           </div>
         </form>
       </div>

@@ -5,5 +5,5 @@ $posts = $db->getAll('posts');
 //$users = $db->getAll('users');
 //$posts = getAllPosts($pdo) ;
 
-include __DIR__ . '/../index.view.php';
+require_once __DIR__ . '/../views/index.view.php';
 ?>

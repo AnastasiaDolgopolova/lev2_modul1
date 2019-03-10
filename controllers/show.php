@@ -23,7 +23,9 @@ $post = $db->getOne('post', $id);
     <div class="row">
         <div class="col-12">
             <div class="post mb-4">
-              
+              <div class="post-image mr-3 ">
+                    <img src="/../uploads/<?=$post['image'] ?>" alt="" width="100" >
+                </div>
                 <div class="post-content">
                     
                     <hr>

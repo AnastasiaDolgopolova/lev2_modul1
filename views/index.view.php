@@ -23,7 +23,9 @@ include  __DIR__ .'/include_header.php';
                <tr>
               <th scope="row"><?php echo $post['id'];?></th>
               <td><a href="/show?id=<?php echo $post['id'];?>"><?php echo $post['title'];?></a></td>
-              <td><img src="uploads/<?php echo $post['picture'];?> " width="100"></td>
+              <td>
+                  <img src="/../uploads/<?=$post['image'] ?>" alt="" width="100" >        
+              </td>
               <td><?php echo $post['date'];?></td>
               <td>
                 <a href="/edit?id=<?php echo $post['id'];?>" class="btn btn-warning">Edit</a>

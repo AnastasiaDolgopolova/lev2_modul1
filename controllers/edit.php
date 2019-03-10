@@ -27,9 +27,13 @@ $post = $db->getOne('post', $id);
           <div class="form-group">
             <textarea name="text" class="form-control" rows="10" cols="60"  maxlength="5000" value="<?php echo $post['text'];?>"></textarea>
         </div>
+        <div class="form-group">
+            <img src="/../uploads/<?=$post['image'] ?>" alt="" width="100" >
+            <input type="hidden" name="oldImage" value="<?=getImage($post['image']) ?>">
+        </div>
          <div class="form-group">
-            <label for="exampleFormControlFile1">Example file input</label>
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            <label for="exampleFormControlFile1">Add image</label>
+            <input type="file" class="form-control-file" name="image">
          </div>
           <div class="form-group">
               <button class="btn btn-warning">Edit Post</button>

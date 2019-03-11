@@ -18,7 +18,7 @@ require_once  __DIR__ . '/../views/include_header.php';
             <textarea name="text" class="form-control" rows="10" cols="60"  maxlength="5000"></textarea>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlFile1">Add image</label>
+          <label >Add image</label>
           <input type="file" class="form-control-file" name="image">
          </div>
           <div class="form-group">

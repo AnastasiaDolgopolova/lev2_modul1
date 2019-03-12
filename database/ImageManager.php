@@ -18,7 +18,7 @@
 	//public
 	 function deleteImage($filename){
 		
- 		unlik(__DIR__ . '/../uploads/'. $filename);
+ 		unlink('uploads/'. $filename);
  	}
 //}
 ?>

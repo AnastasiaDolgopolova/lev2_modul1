@@ -1,5 +1,7 @@
 <?php 
 include  __DIR__ .'/include_header.php';
+
+//?image=<?php echo $post['image'] ?>
 ?>
 
 
@@ -28,8 +30,9 @@ include  __DIR__ .'/include_header.php';
               </td>
               <td><?php echo $post['date'];?></td>
               <td>
-                <a href="/edit?id=<?php echo $post['id'];?>" class="btn btn-warning">Edit</a>
-                <a href="/delete?id=<?php echo $post['id'];?>"  class="btn btn-danger" onclick="return confirm('are you shure?')">Delete</a>
+                <a href="/edit?id=<?php echo $post['id'] ?>" class="btn btn-warning">Edit</a>
+                <a href="/delete?id=<?php echo $post['id'] ?>&image=<?php echo $post['image'] ?>" 
+                 class="btn btn-danger" onclick="return confirm('are you shure?')">Delete</a>
               </td>
               
             </tr>

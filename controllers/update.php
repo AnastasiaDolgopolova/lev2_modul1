@@ -6,7 +6,8 @@ include __DIR__ . '/../database/ImageManager.php';
 
 if(!empty($_FILES['image']['tmp_name'])){
 	
-	$filename= uploadImage($_FILES ['image']);		
+	$filename= uploadImage($_FILES ['image']);
+	deleteImage($_POST['oldImage']);		
   }
  else{$filename = $_POST['oldImage'];
 	

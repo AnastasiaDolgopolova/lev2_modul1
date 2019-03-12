@@ -3,11 +3,12 @@ include __DIR__ . '/../functions.php';
 $db =include __DIR__ . '/../database/start.php';
 include __DIR__ . '/../database/ImageManager.php';
 
+$imageMove = new ImageManager;
 
 if(!empty($_FILES['image']['tmp_name'])){
 	
-	$filename= uploadImage($_FILES ['image']);
-	deleteImage($_POST['oldImage']);		
+	$filename=$imageMove-> uploadImage($_FILES ['image']);
+	$imageMove->deleteImage($_POST['oldImage']);		
   }
  else{$filename = $_POST['oldImage'];
 	

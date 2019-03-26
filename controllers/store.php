@@ -1,22 +1,41 @@
 <?php
+include __DIR__ . '/../database/Validate.php';
 include __DIR__ . '/../functions.php';
 $db =include __DIR__ . '/../database/start.php';
-include __DIR__ . '/../database/ImageManager.php';
+require_once __DIR__ . '/../database/ImageManager.php';
 
-$imageMove = new ImageManager;
-
-if(count($_FILES)>0){
-$filename=$imageMove-> uploadImage($_FILES ['image']);
-}
-
-$db->create('posts', [
+$datas = [ 
 	'title' => $_POST['title'],
 	'description' => $_POST['description'],
 	'text' => $_POST['text'],
-	'image' => $filename
-]);
+];
+ $validation= new InputValidation;
 
 
-header('Location: /');
+//if(!$errorMessage)
+	$imageMove = new ImageManager;
+
+	if(count($_FILES)>0){
+	$filename=$imageMove-> uploadImage($_FILES ['image']);
+	}
+	else {
+			$errorMessage='Добавте картинку.';
+		}
+
+	$db->create('posts', [
+		'title' => $_POST['title'],
+		'description' => $_POST['description'],
+		'text' => $_POST['text'],
+		'image' => $filename
+	]);
+
+
+	header('Location: /');
+	}
+
+	if($errorMessage) {
+		require 'errors.php';
+		exit;
+	}
 
 ?>

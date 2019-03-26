@@ -1,7 +1,7 @@
 <?php
 include __DIR__ . '/../functions.php';
 $db =include __DIR__ . '/../database/start.php';
-include __DIR__ . '/../database/ImageManager.php';
+require_once __DIR__ . '/../database/ImageManager.php';
 
 $imageMove = new ImageManager;
 $id = $_GET['id'];

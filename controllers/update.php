@@ -1,7 +1,14 @@
 <?php
+include __DIR__ . '/../database/Validate.php';
 include __DIR__ . '/../functions.php';
 $db =include __DIR__ . '/../database/start.php';
-include __DIR__ . '/../database/ImageManager.php';
+require_once __DIR__ . '/../database/ImageManager.php';
+$datas = [ 
+	'title' => $_POST['title'],
+	'description' => $_POST['description'],
+	'text' => $_POST['text'],
+];
+ $validation=InputValidation::InputEmpty($datas);
 
 $imageMove = new ImageManager;
 
@@ -25,4 +32,8 @@ $_GET['id']);
 
 header('Location: /');
 
+	if($errorMessage) {
+		require 'errors.php';
+		exit;
+	}
 ?>

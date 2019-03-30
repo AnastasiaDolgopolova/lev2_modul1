@@ -4,14 +4,14 @@ include __DIR__ . '/../functions.php';
 $db =include __DIR__ . '/../database/start.php';
 require_once __DIR__ . '/../database/ImageManager.php';
 
-$datas = [ 
+$data = [ 
 	'title' => $_POST['title'],
 	'description' => $_POST['description'],
 	'text' => $_POST['text'],
 ];
- $validation= new InputValidation;
+ $validation=InputValidation::InputEmpty($data);
 
-
+dd($errorMessage);
 //if(!$errorMessage)
 	$imageMove = new ImageManager;
 
@@ -31,7 +31,7 @@ $datas = [
 
 
 	header('Location: /');
-	}
+	//}
 
 	if($errorMessage) {
 		require 'errors.php';

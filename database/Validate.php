@@ -1,42 +1,34 @@
 <?php
-trait Data_Value
-{
-	public function arreyPiece ($datas){
-		foreach($datas as $data => $value){
-			
-		}
-	}
-}
+
 class InputValidation {
-	private $datas;
-	private $dataValue;
-	
-	use Data_Value;
+/*	//private $data;
+	//private $dataValue;
 
-	function __construct ($datas)
-	{
-		$this->datas=array_map("clean",$datas);
-		$this->dataValue=arreyPiece ($datas);
-	}
-
-
-	}
-	public function InputEmpty (){
-		$this->datas->arreyPiece ();
-		 if(strlen($value)<=0){
-	  		$errorMessage[$data]="поле $data не заполнено\n";
+	//function __construct ($data)
+	//{
+		$this->data=$data;
+	//}
+*/
+	public static function InputEmpty ($data){
+		$Message=array();
+		foreach($data as $key => $value){
+		 if(empty($value)){
+	  		$errorMessage[]="поле $key не заполнено\n";
 	  	}
-	  return($errorMessage);	
+
+	  }
+	  return $errorMessage;
 	}
 
-	public function clean ($datas){
-
-		$value = trim($value);
-		$value = stripslashes($value);
-		$value = strip_tags($value);
-		$value = htmlspecialchars($value);
-
-	  return $value;
+	/*public function clean ($data){
+		foreach($this->data as $this->key => $this->value){
+			$this->value -> trim($this->value);
+			$this->value ->stripslashes($this->value);
+			$this->value ->strip_tags($this->value);
+			$this->value ->htmlspecialchars($this->value);
+		
+		}
+	  return $this->value;
 	}
-
+*/
 }

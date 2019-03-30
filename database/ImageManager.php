@@ -25,7 +25,7 @@ class ImageManager{
  	private function new_file_name()
  	{
  		$extension = pathinfo($this->file_name,PATHINFO_EXTENSION);
-  	 	$this->new_file_name = md5(uniqid()) . "." . $extension;
+  	 	return $this->new_file_name = md5(uniqid()) . "." . $extension;
  	}
 
 	public function uploadImage ($image){

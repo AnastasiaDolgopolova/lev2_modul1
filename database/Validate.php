@@ -9,26 +9,28 @@ class InputValidation {
 		$this->data=$data;
 	//}
 */
-	public static function InputEmpty ($data){
-		$Message=array();
+	public static function empty_validation ($data){
+		$errorMessage=array();
 		foreach($data as $key => $value){
-		 if(empty($value)){
-	  		$errorMessage[]="поле $key не заполнено\n";
-	  	}
-
+			 if(empty($value)){
+		  	$errorMessage[]="поле $key не заполнено\n";
+			 
+		  	}
 	  }
-	  return $errorMessage;
+	// dd($errorMessage);
+	 return $errorMessage;
 	}
 
 	/*public function clean ($data){
-		foreach($this->data as $this->key => $this->value){
-			$this->value -> trim($this->value);
-			$this->value ->stripslashes($this->value);
-			$this->value ->strip_tags($this->value);
-			$this->value ->htmlspecialchars($this->value);
-		
-		}
-	  return $this->value;
+		foreach($data as $key => $value){
+
+            $value = trim($value);
+            $value = stripslashes($value);
+            $value = strip_tags($value);
+            $value = htmlspecialchars($value);
+        }
+
+      return $data;
 	}
 */
 }

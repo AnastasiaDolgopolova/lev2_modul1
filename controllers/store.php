@@ -9,9 +9,10 @@ $data = [
 	'description' => $_POST['description'],
 	'text' => $_POST['text'],
 ];
- $validation=InputValidation::InputEmpty($data);
-
-dd($errorMessage);
+ $validation=InputValidation::empty_validation($data);
+echo $validation->errorMessage;
+die;
+dd($validation->errorMessage);
 //if(!$errorMessage)
 	$imageMove = new ImageManager;
 

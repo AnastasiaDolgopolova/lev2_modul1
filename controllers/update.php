@@ -8,7 +8,7 @@ $datas = [
 	'description' => $_POST['description'],
 	'text' => $_POST['text'],
 ];
- $validation=InputValidation::InputEmpty($datas);
+ $validation=InputValidation::empty_validation($datas);
 
 $imageMove = new ImageManager;
 

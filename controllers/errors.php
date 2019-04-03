@@ -16,11 +16,13 @@
 
 	<body>
 		<div class="container text-center mt-5">
-			<?php if(isset($errorMessage)): ?>
-				<p><?php echo $errorMessage; ?></p>
-			<?php else: ?>
-				<p>Ошибка.</p>
-			<?php endif; ?>
+			<?php if(is_array($errorMessage)):
+				foreach($errorMessage as $mesage) :?>
+				<p><?php echo $mesage; ?></p>
+				<?php endforeach;?>
+				<?php else: ?>
+				<p><?php echo $errorMessage; ?></p>	
+				<?php endif; ?>
 			<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Назад</a>
 		</div>
 	</body>

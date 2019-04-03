@@ -5,23 +5,23 @@ $db =include __DIR__ . '/../database/start.php';
 require_once __DIR__ . '/../database/ImageManager.php';
 
 $data = [ 
-	'title' => $_POST['title'],
-	'description' => $_POST['description'],
-	'text' => $_POST['text'],
+	'title' => clean($_POST['title']),
+	'description' => clean($_POST['description']),
+	'text' => clean($_POST['text']),
 ];
- $validation=InputValidation::empty_validation($data);
-echo $validation->errorMessage;
-die;
-dd($validation->errorMessage);
-//if(!$errorMessage)
-	$imageMove = new ImageManager;
+ $errorMessage=InputValidation::empty_validation($data);
 
-	if(count($_FILES)>0){
-	$filename=$imageMove-> uploadImage($_FILES ['image']);
+if(empty($errorMessage)){
+	if($_FILES['image']['name'] == ''){
+		$errorMessage='Добавте картинку.';
+		include 'errors.php';
+		exit;
 	}
-	else {
-			$errorMessage='Добавте картинку.';
-		}
+	else{
+	$imageMove = new ImageManager($_FILES ['image']);
+	$filename=$imageMove->uploadImage ();
+	}
+	
 
 	$db->create('posts', [
 		'title' => $_POST['title'],
@@ -32,9 +32,9 @@ dd($validation->errorMessage);
 
 
 	header('Location: /');
-	//}
+	}
 
-	if($errorMessage) {
+	elseif($errorMessage) {
 		require 'errors.php';
 		exit;
 	}

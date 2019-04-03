@@ -1,14 +1,7 @@
 <?php
 
 class InputValidation {
-/*	//private $data;
-	//private $dataValue;
 
-	//function __construct ($data)
-	//{
-		$this->data=$data;
-	//}
-*/
 	public static function empty_validation ($data){
 		$errorMessage=array();
 		foreach($data as $key => $value){
@@ -17,20 +10,6 @@ class InputValidation {
 			 
 		  	}
 	  }
-	// dd($errorMessage);
 	 return $errorMessage;
-	}
-
-	/*public function clean ($data){
-		foreach($data as $key => $value){
-
-            $value = trim($value);
-            $value = stripslashes($value);
-            $value = strip_tags($value);
-            $value = htmlspecialchars($value);
-        }
-
-      return $data;
-	}
-*/
+	}	
 }

@@ -11,9 +11,25 @@ $data = [
  $errorMessage=InputValidation::empty_validation($data);
 if(empty($errorMessage)){
 if(!empty($_FILES['image']['tmp_name'])){
-	$imageMove = new ImageManager($_FILES ['image']);
+	$image=$_FILES ['image'];	
+	$imageMove = new ImageManager($image);
+	//$filename=$imageMove->uploadImage ();
+	$errorMessage=$imageMove->file_size();
 
-	$filename=$imageMove-> uploadImage();
+	if($errorMessage === true){
+			$errorMessage=$imageMove-> get_image_format($img);	
+		}
+		
+		if($errorMessage === true){
+			$newName=$imageMove->new_file_name();
+			$filename=$imageMove->uploading ();
+		}
+			elseif($errorMessage !== true){
+			
+			include 'errors.php';
+			exit;
+		}
+	
 	$imageMove->deleteImage($_POST['oldImage']);		
   }
  else{$filename = $_POST['oldImage'];

@@ -16,4 +16,7 @@ function dd($data){
       return $value;
 }
 
+function deleteImage($delete_img){
+        unlink('uploads/'. $delete_img);
+    }
 ?>

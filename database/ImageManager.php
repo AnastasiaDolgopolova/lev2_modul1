@@ -7,8 +7,10 @@ class ImageManager{
 	private $file_size;
 	private $new_file_name;
 	private $extension;
+	public $delete_img;
 	function __construct ($image)
 	{
+		//$this->delete_img=$delete_img;
 		$this->image=$image;
 		$this->file_name=$image['name'];
 		$this->tmp_name=$image['tmp_name'];
@@ -23,7 +25,6 @@ class ImageManager{
 		$this->uploading ();}
 		return $this->new_file_name;
 	}
-
 	public function file_size()
 	{
 		if($this->file_size >(1024000)){
@@ -36,7 +37,7 @@ class ImageManager{
  	public function get_image_format()
 	{ 
 		$this->extension = pathinfo($this->file_name,PATHINFO_EXTENSION);
-		$types = array('jpg','png','gif','bmp','jpeg');
+		$types = array('png','jpeg','jpg');
 		if(!in_array($this->extension, $types)){
 			$errorMessage='Ошибка!Недопустимый формат файла.';
 			return $errorMessage;
@@ -44,22 +45,18 @@ class ImageManager{
 		}
 		 return true;
 	}
-
  	public function new_file_name()
  	{
   	 	return $this->new_file_name = md5 (microtime()) . "." . $this->extension;
  	}
-
 	public function uploading (){
 	
     move_uploaded_file( $this->tmp_name, __DIR__ . '	/../public/uploads/'. $this->new_file_name);
-
      return $this->new_file_name;
   	}
-
-	public function deleteImage($filename){
-		
- 		unlink('uploads/'. $filename);
+	public function deleteImage($delete_img){
+		$this->delete_img=$delete_img;
+ 		unlink('uploads/'. $this->delete_img);
  	}
 }
 ?>

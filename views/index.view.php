@@ -1,7 +1,6 @@
 <?php 
 include  __DIR__ .'/include_header.php';
 
-//?image=<?php echo $post['image'] ?>
 ?>
 
 

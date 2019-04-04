@@ -1,27 +1,14 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
+<?php 
+require_once  __DIR__ . '/../views/include_header.php';
 
-		<title>Errors</title>
-
-		<!-- Bootstrap core CSS -->
-		<link href="assets/css/bootstrap.css" rel="stylesheet">
-		<link href="assets/css/style.css" rel="stylesheet">
-		
-		<style>
-			
-		</style>
-	</head>
-
-	<body>
+?>
 		<div class="container text-center mt-5">
 			<?php if(is_array($errorMessage)):
 				foreach($errorMessage as $mesage) :?>
-				<p><?php echo $mesage; ?></p>
+				<h1 class="text-danger"><?php echo $mesage; ?></h1>
 				<?php endforeach;?>
 				<?php else: ?>
-				<p><?php echo $errorMessage; ?></p>	
+				<h1 class="text-danger"><?php echo $errorMessage; ?></h1>	
 				<?php endif; ?>
 			<a href="<?php echo $_SERVER['HTTP_REFERER']; ?>">Назад</a>
 		</div>

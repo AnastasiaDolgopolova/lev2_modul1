@@ -1,5 +1,5 @@
 <?php
-$db =include __DIR__ . '/../database/start.php';
+$db =include __DIR__ . '/../model/database/start.php';
 
 $posts = $db->getAll('posts');
 //$users = $db->getAll('users');

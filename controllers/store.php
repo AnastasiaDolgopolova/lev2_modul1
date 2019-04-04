@@ -1,8 +1,9 @@
 <?php
-include __DIR__ . '/../database/Validate.php';
-include __DIR__ . '/../functions.php';
-$db =include __DIR__ . '/../database/start.php';
-require_once __DIR__ . '/../database/ImageManager.php';
+include __DIR__ . '/../model/classes/Validate.php';
+include __DIR__ . '/../model/functions.php';
+$db =include __DIR__ . '/../model/database/start.php';
+require_once __DIR__ . '/../model/classes/ImageManager.php';
+require_once __DIR__ . '/../model/function_clean.php';
 $data = [ 
 	'title' => clean($_POST['title']),
 	'description' => clean($_POST['description']),

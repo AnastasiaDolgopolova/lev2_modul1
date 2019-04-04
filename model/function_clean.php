@@ -1,11 +1,4 @@
 <?php
-function dd($data){
-    echo '<pre>';
-    var_dump($data);
-    echo '</pre>';
-    die;
-  }
-
  function clean ($value){
 
          $value = trim($value);
@@ -16,7 +9,4 @@ function dd($data){
       return $value;
 }
 
-function deleteImage($delete_img){
-        unlink('uploads/'. $delete_img);
-    }
 ?>

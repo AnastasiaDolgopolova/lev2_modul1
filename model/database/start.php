@@ -1,8 +1,8 @@
 <?php
-$config = include __DIR__ . '/../config.php';
+$config = include __DIR__ . '/../../config.php';
 include __DIR__ . '/../database/QueryBuilder.php';
 include __DIR__ . '/../database/Connection.php';
-include __DIR__ . '/../database/ImageManager.php';
+include __DIR__ . '/../classes/ImageManager.php';
 
 //$pdo = Connection::make();
 

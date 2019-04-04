@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 04 2019 г., 13:05
+-- Время создания: Апр 04 2019 г., 13:44
 -- Версия сервера: 5.7.23
 -- Версия PHP: 7.1.22
 
@@ -46,7 +46,10 @@ INSERT INTO `posts` (`id`, `title`, `description`, `image`, `text`, `date`) VALU
 (19, 'анг', 'анг', '5c8a8ccc48d7d.jpg', 'ынг', '2019-03-14 17:18:04'),
 (21, 'srtg', 'argt', '5c8e67433e3ad.jpg', 'art', '2019-03-17 15:26:59'),
 (27, 'xhg', 'cghj', '5c8e73307f1f6.jpg', 'xhj', '2019-03-17 16:17:52'),
-(29, 'vuhl', 'vhijl', '9228164f28bf5eee8e3a85b3ae20b0bc.jpg', 'vhul', '2019-04-04 08:55:53');
+(29, 'vuhl', 'vhijl', '9228164f28bf5eee8e3a85b3ae20b0bc.jpg', 'vhul', '2019-04-04 08:55:53'),
+(65, 'fgh', 'gfh', 'c282a06ffb4b98dbcbc8ba7c34f5322c.jpg', 'xfgh', '2019-04-04 10:41:46'),
+(68, 'io', 'ui', '25602c609b459a540993381230db36f5.jpg', 'ui', '2019-04-04 10:43:00'),
+(69, 'jl', 'lkj', '2aa868701073b08b5aaa2ecc5913522d.jpg', 'bkl', '2019-04-04 10:43:14');
 
 --
 -- Индексы сохранённых таблиц
@@ -66,7 +69,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT для таблицы `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

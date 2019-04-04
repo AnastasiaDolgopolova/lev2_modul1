@@ -1,8 +1,8 @@
 <?php
 require_once  __DIR__ . '/../views/include_header.php';
 
-include __DIR__ . '/../functions.php';
-$db =include __DIR__ . '/../database/start.php';
+include __DIR__ . '/../model/functions.php';
+$db =include __DIR__ . '/../model/database/start.php';
 
 $id = $_GET['id'];
 $post = $db->getOne('post', $id);

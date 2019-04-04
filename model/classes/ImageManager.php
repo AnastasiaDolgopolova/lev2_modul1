@@ -51,7 +51,7 @@ class ImageManager{
  	}
 	public function uploading (){
 	
-    move_uploaded_file( $this->tmp_name, __DIR__ . '	/../public/uploads/'. $this->new_file_name);
+    move_uploaded_file( $this->tmp_name, __DIR__ . '	/../../public/uploads/'. $this->new_file_name);
      return $this->new_file_name;
   	}
 	public function deleteImage($delete_img){
